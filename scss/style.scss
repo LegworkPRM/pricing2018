@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+// Colors
+$lw-red: #ee3b23;
+$lw-indigo: #44a8de;
+$lw-deep-blue: #253237;
+$lw-steel-blue: #617d8a;
+$lw-blue: #455b64;
+$lw-salmon: #e84849;
+$lw-gravel-blue: #374851;
+$lw-off-white: #f1f3f4;
+$lw-orange: #f79523;
+//Opacity
+$lw-steel-blue-op: rgba(97, 125, 138, 0.6);
+// Borders
+$borders: rgba(97, 125, 138, 0.3);
+$light-borders: rgba(97, 125, 138, 0.15);
+// Shadows
+$shadows: rgba(46, 61, 73, 0.15);
+$light-shadows: rgba(46, 61, 73, 0.1);
+// Hovers
+$indigo-hover: rgba(68, 168, 222, 0.1);
+
+// Main
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+}
+
+// Type
+h1 {
+  font-size: 2em;
+  color: $lw-blue;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0;
+  text-transform: capitalize;
+}
+h2 {
+  color: $lw-steel-blue;
+  font-size: 0.85em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+h3 {
+}
+h4 {
+  color: $lw-blue;
+  margin: 0;
+  font-size: 1.25em;
+}
+a {
+  text-decoration: none;
+  color: $lw-steel-blue;
+}
+h5.price-note {
+  text-transform: uppercase;
+  color: $lw-indigo;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+}
+h5 {
+  font-size: 1.35em;
+  margin: 0 2px;
+  color: #455b64;
+  padding: 0;
+  line-height: 100%;
+}
+p {
+  color: $lw-steel-blue;
+}
+p.dollar-sign {
+  font-size: 0.8em;
+  align-self: flex-start;
+  margin: 0;
+  font-weight: 400;
+  color: $lw-steel-blue-op;
+}
+p.per-month {
+  font-size: 0.8em;
+  align-self: flex-end;
+  margin: 0;
+  font-weight: 400;
+  color: $lw-steel-blue-op;
+}
+.price-amount-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  h5 {
+    font-family: lato;
+  }
+}
+
+// Pricing
+.pricing {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.pricing-title {
+  width: 90%;
+  margin: 0 auto 10px auto;
+  display: flex;
+  flex-direction: column;
+  
+  a.book-a-demo {
+    margin-top: 35px;
+  }
+}
+
+// Tabs
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 25px 5% 50px 5%;
+
+  ul.tab-price-cards {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0);
+      box-shadow: 5px 5px 30px 0px $shadows;
+      padding: 1px;
+      // transition: all .15s ease-Out;
+      &:hover:not(.active) {
+        background: $indigo-hover;
+        border: 1px solid $lw-indigo;
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        padding: 0 20px;
+
+        .package-name {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          span.selector {
+            display: block;
+            border: 2px solid #cbd6e2;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.tab-price-cards li.active {
+  border: 2px solid $lw-indigo;
+  padding: 0;
+  a {
+    .package-name {
+      span.selector {
+        border: 2px solid $lw-indigo;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:after {
+          content: "";
+          display: block;
+          width: 70%;
+          height: 70%;
+          background-color: $lw-indigo;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.tab-block {
+  padding: 20px 0;
+
+  .tab-title {
+    h3 {
+      font-size: 2em;
+      color: $lw-blue;
+      margin: 0 0 10px 0;
+    } 
+
+    a.book-a-demo {
+      display: none;
+    }
+  }
+
+  .about-package {
+    margin: 10px 0 40px 0;
+    p {
+      font-size: .95em;
+      line-height: 150%;
+    }
+  }
+
+  .package-features {
+    h5 {
+      text-transform: uppercase;
+      font-size: 1em;
+      color: $lw-blue;
+    }
+    ul {
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        margin: 15px 0;
+        color: $lw-steel-blue;
+        font-weight: 400;
+        span {
+          margin-left: 10px;
+        }
+        &:hover {
+          background-color: none;
+        }
+      }
+    }
+  }
+}
+
+a.book-a-demo {
+  display: inline-block;
+  text-decoration: none;
+  width: auto;
+  text-align: center;
+  padding: 15px 25px;
+  background-color: rgba(236, 70, 70, 0.97);
+  border-top: 2px solid rgba(236, 70, 70, 0.97);
+  border-left: 2px solid rgba(236, 70, 70, 0.97);
+  border-right: 2px solid rgba(236, 70, 70, 0.97);
+  text-transform: uppercase;
+  color: $lw-off-white;
+  font-weight: 700;
+  font-size: 0.8em;
+  border-bottom: 2px solid #e82d2b;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: all 0.2s ease-Out;
+  &:hover {
+    background-color: rgba(237,84,84,0.97);
+    border-bottom: 2px solid #e92d2b;
+  }
+}
+
+.total-cost-calculated {
+  margin-top: 50px;
+  padding: 20px 0 30px 0;
+  border-top: 2px solid $light-borders;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.help-blurb {
+  display: none;
+}
+
+@media screen and (min-width: 450px) {
+  .book-a-demo-container {
+    a.book-a-demo {
+      float: right;
+    }
+  }
+  .tab-block {
+    .tab-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        margin: 0;
+        font-size: 2.3em;
+      }
+
+      // a.book-a-demo {
+      //   display: inline-block;
+      //   float: none;
+      //   margin: 0;
+      // }
+    }
+
+    .package-features {
+      ul {
+        li {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  .pricing-title a.book-a-demo {
+    display: none;
+  }
+  .total-cost-calculated {
+    h5 {
+      font-size: 1.7em;
+    }
+    p.dollar-sign {
+      font-size: 1em;
+    }
+    p.per-month {
+      font-size: 1em;
+    }
+  }
+  .pricing-container {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .tabs {
+    width: 95%;
+    padding: 50px 2.5%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+
+    ul.tab-price-cards {
+      width: 30%;
+    }
+    .tab-block {
+      width: 65%;
+      margin-left: 5%;
+    }
+  }
+
+  .help-blurb {
+    width: 90%;
+    padding: 50px 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h5 {
+      text-align: center;
+      line-height: 120%;
+    }
+    p {
+      width: 100%;
+      line-height: 150%;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+      color: $lw-indigo;
+      padding: 10px;
+      font-size: 1.15em;
+      font-weight: 400;
+      span {
+        margin: 0 10px;
+      }
+      img {
+        width: .8em;
+        height: auto;
+        transform-origin: center;
+      }
+      &:hover img {
+        animation: phonecall .2s ease-in-out 2;
+      }
+    }
+    @keyframes phonecall {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(-10deg);
+      }
+      35% {
+        transform: rotate(0deg);
+      }
+      80% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0deg)
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 3em;
+  }
+  .pricing-container {
+    width: 1250px;
+  }
+
+  .tabs {
+    width: 100%;
+    padding: 75px 0 50px 0;
+    justify-content: space-between;
+
+    ul.tab-price-cards {
+      width: 325px;
+    }
+    .tab-block {
+      width: 825px;
+    }
+
+    .package-features {
+      height: 375spx;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 80%;
+        li {
+          width: calc(100% / 2);
+        }
+        // Apt reminder
+        li:nth-of-type(1) {
+          order: 1;
+        }
+        // Two-way
+        li:nth-of-type(2) {
+          order: 3;
+        }
+        // Number val
+        li:nth-of-type(3) {
+          order: 5;
+        }
+        // referral
+        li:nth-of-type(4) {
+          order: 7;
+        }
+        // reviews
+        li:nth-of-type(5) {
+          order: 9;
+        }
+        // new patient exp
+        li:nth-of-type(6) {
+          order: 11;
+        }
+        // one-click
+        li:nth-of-type(7) {
+          order: 2;
+        }
+        // social media
+        li:nth-of-type(8) {
+          order: 4;
+        }
+        // web integrations
+        li:nth-of-type(9) {
+          order: 6;
+        }
+        // seo
+        li:nth-of-type(10) {
+          order: 8;
+        }
+        // search marketing
+        li:nth-of-type(11) {
+          order: 10;
+        }
+      }
+    }
+  }
+
+  .help-blurb {
+    width: 100%;
+    padding: 50px 0 0 0;
+  }
+}
