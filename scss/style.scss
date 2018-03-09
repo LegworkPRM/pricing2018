@@ -107,7 +107,7 @@ p.per-month {
   margin: 0 auto 10px auto;
   display: flex;
   flex-direction: column;
-  
+
   a.book-a-demo {
     margin-top: 35px;
   }
@@ -193,7 +193,7 @@ ul.tab-price-cards li.active {
       font-size: 2em;
       color: $lw-blue;
       margin: 0 0 10px 0;
-    } 
+    }
 
     a.book-a-demo {
       display: none;
@@ -203,7 +203,7 @@ ul.tab-price-cards li.active {
   .about-package {
     margin: 10px 0 40px 0;
     p {
-      font-size: .95em;
+      font-size: 0.95em;
       line-height: 150%;
     }
   }
@@ -252,7 +252,7 @@ a.book-a-demo {
   margin: 0 auto;
   transition: all 0.2s ease-Out;
   &:hover {
-    background-color: rgba(237,84,84,0.97);
+    background-color: rgba(237, 84, 84, 0.97);
     border-bottom: 2px solid #e92d2b;
   }
 }
@@ -269,6 +269,81 @@ a.book-a-demo {
 
 .help-blurb {
   display: none;
+}
+
+// Support Highlight
+.customer-support {
+  width: 100%;
+  overflow: hidden;
+
+  .message {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    h3 {
+      font-size: 2em;
+      text-align: center;
+      color: $lw-blue;
+      margin: 0;
+    }
+    p {
+      line-height: 150%;
+      text-align: center;
+      color: $lw-steel-blue;
+    }
+  }
+  .support-options-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .support-item {
+      padding: 50px 0 0 0;
+
+      img {
+        display: block;
+        width: 50px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+      h4 {
+        text-align: center;
+      }
+    }
+  }
+  .support-tri-image-container {
+    img {
+      display: none;
+    }
+  }
+}
+
+.pricing-faq {
+  width: 90%;
+  padding: 80px 5% 100px 5%;
+
+  h4 {
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0 30px 0;
+  }
+
+  .faq-item {
+    padding: 20px 0;
+  }
+
+  p.bold {
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0;
+    color: $lw-blue;
+  }
+
+  p {
+    line-height: 150%;
+    margin: 5px 0;
+  }
 }
 
 @media screen and (min-width: 450px) {
@@ -370,12 +445,12 @@ a.book-a-demo {
         margin: 0 10px;
       }
       img {
-        width: .8em;
+        width: 0.8em;
         height: auto;
         transform-origin: center;
       }
       &:hover img {
-        animation: phonecall .2s ease-in-out 2;
+        animation: phonecall 0.2s ease-in-out 2;
       }
     }
     @keyframes phonecall {
@@ -383,16 +458,67 @@ a.book-a-demo {
         transform: rotate(0deg);
       }
       20% {
-        transform: rotate(-10deg);
+        transform: rotate(-15deg);
       }
       35% {
         transform: rotate(0deg);
       }
       80% {
-        transform: rotate(10deg);
+        transform: rotate(15deg);
       }
       100% {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
+      }
+    }
+  }
+  // Customer Support/FAQ
+  .customer-support {
+    width: 90%;
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .message {
+      width: 50%;
+      margin: 0;
+      h2, h3, p {
+        text-align: left;
+      }
+    }
+
+    .support-options-flex-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      .support-item {
+
+        h4 {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .support-tri-image-container {
+      display: block;
+      width: 40%;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .pricing-faq {
+
+    .faq-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      .faq-item {
+        width: 45%;
       }
     }
   }
@@ -480,5 +606,48 @@ a.book-a-demo {
   .help-blurb {
     width: 100%;
     padding: 50px 0 0 0;
+  }
+
+  // Customer support/FAQ
+  .customer-support {
+    width: 1250px;
+    padding: 100px 0;
+    margin: 0 auto;
+
+    .message {
+      width: 550px;
+    }
+
+    .support-tri-image-container {
+      width: 600px;
+      margin-right: -20px;
+    }
+  }
+
+  .pricing-faq {
+    width: 1250px;
+    margin: 0 auto;
+    padding: 100px 0 150px 0;
+
+    h4 {
+      margin: 10px 0 30px 0;
+    }
+
+    .faq-item {
+      padding: 50px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .customer-support {
+    overflow: visible;
+    
+    .support-tri-image-container {
+      overflow: visible;
+      img {
+        width: 700px;
+      }
+    }
   }
 }
